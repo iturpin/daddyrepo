@@ -10,10 +10,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'MicrosoftTrainingServiceConnection'
+    subscriptionId: 'c8417210-763e-4ae4-a9c1-48f0e863e63f'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'rg-devopspipelinetarget'
+    location: 'UK South'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/iturpin/daddyrepo/main/CreateWebApp/azuredeploy.json'
+    overrideParameters: '-projectName MicrosoftTraining'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
