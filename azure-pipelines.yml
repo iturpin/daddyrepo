@@ -22,4 +22,4 @@ steps:
     csmFileLink: 'https://raw.githubusercontent.com/iturpin/daddyrepo/main/CreateWebApp/azuredeploy.json'
     overrideParameters: '-projectName ianturpintraining'
     deploymentMode: 'Incremental'
-    deploymentName: 'DeployPL'
+    deploymentName: 'deploy'
