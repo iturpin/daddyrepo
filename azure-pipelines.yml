@@ -20,6 +20,6 @@ steps:
     location: 'UK South'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/iturpin/daddyrepo/main/CreateWebApp/azuredeploy.json'
-    overrideParameters: '-projectName ianturpintraining'
+    overrideParameters: '-projectName iant'
     deploymentMode: 'Incremental'
     deploymentName: 'deploy'
